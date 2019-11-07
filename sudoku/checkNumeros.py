@@ -1,24 +1,19 @@
 
 
-def checkFilas(sudoku):
+def checkNumeros(sudoku):
 
     assert isinstance(sudoku, list), "Sudoku debe ser una lista"
 
+    numerosValidos = range(1, len(sudoku) + 1)
+
     for fila in sudoku:
 
-        for (posicion, numero) in enumerate(fila):
+        for numero in fila:
 
-            if numero in fila[posicion + 1]:
-
+            if not isinstance(numero, int) or numero not in numerosValidos:
                 return False
 
     return True
-
-
-
-
-
-##### CASOS TEST #####
 
 if __name__ == '__main__':
 
@@ -30,5 +25,4 @@ if __name__ == '__main__':
             pass
 
         else:
-            print(attr, " => ", checkFilas(casosTestSudoku.__dict__[attr]))
-
+            print(attr, " => ", checkNumeros(casosTestSudoku.__dict__[attr]))

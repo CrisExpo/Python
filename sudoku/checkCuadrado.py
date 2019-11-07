@@ -20,12 +20,12 @@ def checkCuadrado(sudoku):
 
 if __name__ == '__main':
 
-    import casosTestSudoku
+    from sudoku import casosTestSudoku
 
     for attr in sorted(casosTestSudoku.__dict__):
 
         if attr.startswith('__'):
             pass
-        
+
         else:
             print(attr, " => ", checkCuadrado(casosTestSudoku.__dict__[attr]))
