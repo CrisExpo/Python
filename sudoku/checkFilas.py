@@ -4,7 +4,13 @@ def checkFilas(sudoku):
 
     assert isinstance(sudoku, list), "Sudoku debe ser una lista"
 
-    pass
+    for fila in sudoku:
+
+        for (posicion, numero) in enumerate(fila):
+
+            if numero in fila[posicion + 1]:
+
+                return False
 
     return True
 
