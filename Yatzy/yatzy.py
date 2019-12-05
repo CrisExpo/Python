@@ -2,6 +2,7 @@ class Yatzy:
 
     @staticmethod
     def chance(*argv):
+        # *argv keeps a random number of arguments, you can run 3 or 5 arguments without changing de code
         total = 0
         for num_dice in argv:
             total += num_dice
@@ -18,18 +19,11 @@ class Yatzy:
         return 0
 
     @staticmethod
-    def ones(d1, d2, d3, d4, d5):
+    def ones(*argv):
         sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1):
-            sum += 1
+        for num_dice in argv:
+            if num_dice == 1:
+                sum += 1
 
         return sum
 
