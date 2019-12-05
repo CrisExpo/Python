@@ -26,9 +26,6 @@ def checkColumnas(sudoku):
 
                 if posicionNumeroFilaSiguiente == primeraFila.index[0]:
                     return False
-            else:
-            
-                indexFilaActual += 1
 
     return True
 
