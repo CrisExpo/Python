@@ -1,5 +1,5 @@
 import pytest
-from Yatzy.yatzy import Yatzy
+from yatzy import Yatzy
 
 # Chance
 # The player scores the sum of all dice, no matter what they read.
