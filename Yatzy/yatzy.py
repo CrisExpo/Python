@@ -1,13 +1,10 @@
 class Yatzy:
 
     @staticmethod
-    def chance(d1, d2, d3, d4, d5):
+    def chance(*argv):
         total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+        for num_dice in argv:
+            total += num_dice
         return total
 
     @staticmethod
