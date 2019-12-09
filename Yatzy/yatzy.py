@@ -1,4 +1,4 @@
-class Yatzy:
+class Yatzy():
 
     @staticmethod
     def chance(*dice):
