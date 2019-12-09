@@ -44,28 +44,24 @@ class Yatzy:
     @staticmethod
     def score_pair(*dice):
         PAIR = 2
-        for numero in range(6, 0, -1):
-            if dice.count(numero) >= PAIR:
-                return PAIR * numero
+        for number in range(6, 0, -1):
+            if dice.count(number) >= PAIR:
+                return PAIR * number
         return 0
 
     @staticmethod
-    def two_pair(d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        n = 0
+    def score_two_pairs(*dice):
+        PAIR = 2
+        pairs = 0
         score = 0
-        for i in range(6):
-            if (counts[6 - i - 1] >= 2):
-                n = n + 1
-                score += (6 - i)
-
-        if (n == 2):
-            return score * 2
+        number = 1
+        while pairs < 2 and number <= 6:
+            if dice.count(number) >= 2:
+                pairs += 1
+                score += PAIR * number
+            number += 1
+        if pairs == 2:
+            return score
         else:
             return 0
 
