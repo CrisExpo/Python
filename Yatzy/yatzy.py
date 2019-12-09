@@ -42,17 +42,11 @@ class Yatzy:
         return self.dice.count(SIX) * SIX
 
     @staticmethod
-    def score_pair(d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6 - at - 1] == 2):
-                return (6 - at) * 2
+    def score_pair(*dice):
+        PAIR = 2
+        for numero in range(6, 0, -1):
+            if dice.count(numero) >= PAIR:
+                return PAIR * numero
         return 0
 
     @staticmethod
@@ -163,3 +157,11 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
+
+    def __init__(self, d1, d2, d3, d4, _5):
+        self.dice = [0] * 5
+        self.dice[0] = d1
+        self.dice[1] = d2
+        self.dice[2] = d3
+        self.dice[3] = d4
+        self.dice[4] = _5
