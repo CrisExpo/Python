@@ -66,16 +66,11 @@ class Yatzy:
             return 0
 
     @staticmethod
-    def four_of_a_kind(_1, _2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[_1 - 1] += 1
-        tallies[_2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i + 1) * 4
+    def four_of_a_kind(*dice):
+        FOUR = 4
+        for number in range(6, 0, -1):
+            if dice.count(number) >= FOUR:
+                return FOUR * number
         return 0
 
     @staticmethod
